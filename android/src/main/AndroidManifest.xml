@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<manifest package="capacitor.android.plugins"
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:amazon="http://schemas.amazon.com/apk/res/android">
+<application >
+<provider android:name="org.apache.cordova.camera.FileProvider" android:authorities="${applicationId}.provider" android:exported="false" android:grantUriPermissions="true">
+  <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/camera_provider_paths"/>
+</provider>
+<provider android:name="de.appplant.cordova.emailcomposer.Provider" android:authorities="${applicationId}.emailcomposer.provider" android:exported="false" android:grantUriPermissions="true">
+  <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/emailcomposer_provider_paths"/>
+</provider>
+<receiver android:name="nl.xservices.plugins.ShareChooserPendingIntent" android:enabled="true">
+  <intent-filter>
+    <action android:name="android.intent.action.SEND"/>
+  </intent-filter>
+</receiver>
+<provider android:authorities="${applicationId}.sharing.provider" android:exported="false" android:grantUriPermissions="true" android:name="nl.xservices.plugins.FileProvider">
+  <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/sharing_paths"/>
+</provider>
+</application>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="com.android.vending.BILLING"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+</manifest>
