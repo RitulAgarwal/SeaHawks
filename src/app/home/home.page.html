@@ -1,0 +1,28 @@
+
+<ion-header>
+  <ion-toolbar>
+    <div class="menuBtn" (click)="openMenu()">
+      <img src="/assets/icon/menu-custom.svg" alt="">
+    </div>
+    <div class="wide-as-needed">
+      <ion-buttons slot="start">
+        <ion-button
+          *ngFor="let footer of footers"
+          (click)="activateFooter(footer)"
+          style="width: 25%;"
+        >
+          {{footer.name}}
+        </ion-button>
+      </ion-buttons>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div
+    id="workbookControl"
+    #workbookControl
+    style="background-color: #80a9f3;"
+  ></div>
+  <div id="tableeditor" #tableeditor></div>
+  <div id="msg" onclick="this.innerHTML='&nbsp;';"></div>
+</ion-content>
